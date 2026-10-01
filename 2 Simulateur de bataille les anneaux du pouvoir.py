@@ -44,26 +44,24 @@ def CALCULER_FORCES (liste_armee_galadriel):
     force_galadriel = liste_armee_galadriel[2] + liste_armee_galadriel[1] + liste_armee_galadriel[0]
     return force_sauron and force_galadriel
 
+def DETERMINER_RESULTAT_COMBAT (force_galadriel, force_sauron):
 
-if force_galadriel > force_sauron:
-    print("Gagnabt = Galadriel")
-elif force_sauron > force_galadriel:
-    print("Gagnant = sauron")
-else:
-    print("Gagnant = null")
+    if force_galadriel > force_sauron:
+        Gagnant = "Galadriel"
+    elif force_sauron > force_galadriel:
+        Gagnant = "sauron"
+    else:
+        Gagnant = "null"
+    return Gagnant
 
 strategie = input("Quelle est votre strategie (agressive/ défensive)" )
 if strategie == "agressive":
-    liste_armee_sauron = liste_armee_sauron + 500
-    print(f"maintenant l'armée de sauron est {force_sauron - 500}")
+    liste_armee_sauron[2] = liste_armee_sauron[2] - 500
+    print(f"maintenant l'armée de sauron est {liste_armee_sauron}")
+
 else:
-    print(f"maintenant l'armée de galadriel est {force_galadriel + 175}")
-
-
-    force_galadriel = liste_armee_galadriel + 175
-
-
-    force_sauron = 1 * liste_armee_galadriel[2] + 5 * liste_armee_galadriel[1] + 10 * liste_armee_galadriel[0] - 500
+    liste_armee_galadriel[1] = liste_armee_galadriel[1] + 175
+    print(f"maintenant l'armée de galadriel est {liste_armee_galadriel}")
 
 
 
